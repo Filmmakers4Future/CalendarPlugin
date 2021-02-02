@@ -39,13 +39,11 @@
     
     public static function addTimezoneConversion() {
       print(fhtml("<!-- Timezone conversion -->").NL);
-      print(fhtml("<script src='".path2uri(__DIR__."/lib/moment.js")."'></script>").NL);
       print(fhtml("<script>").NL);
-      print(fhtml("moment.locale(navigator.userLanguage || navigator.language);").NL);
       print(fhtml("var dates = document.getElementsByClassName(\"date\");").NL);
       print(fhtml("for (date of dates) {
-                     time = moment(date.dataset.time);
-                     date.innerHTML = time.format('LLLL');
+                     time = new Date(date.dataset.time);
+                    date.innerHTML = time.toLocaleString(navigator.userLanguage || navigator.language, {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', weekday: 'short'});;
                  }".NL));
       print(fhtml("</script>").NL);
       
