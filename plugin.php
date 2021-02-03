@@ -106,7 +106,7 @@
         
         if (count(Plugins::get(static::CALENDAR_DATA)) != $eventsDisplayed) {
           $calendarHTML .= fhtml("<a class=\"btn btn-primary btn-l\" href=\"?showPast=1\">%s</a>".NL, Plugins::get(static::CALENDAR_BUTTON_SHOW_PAST_TEXT));
-        } elseif ((bool)$_GET['showPast']) {
+        } elseif (isset($_GET['showPast']) && (bool)$_GET['showPast']) {
           $calendarHTML .= fhtml("<a class=\"btn btn-primary btn-l\" href=\"%s\">%s</a>".NL, rtrim(explode("?", $_SERVER['REQUEST_URI'])[0],"/"), Plugins::get(static::CALENDAR_BUTTON_HIDE_PAST_TEXT));
         }
         
