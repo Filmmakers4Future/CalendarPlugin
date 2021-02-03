@@ -59,9 +59,6 @@
       if (is_string($result)) {
         if (Plugins::get(static::CALENDAR_DATA)) {
           $entries = Plugins::get(static::CALENDAR_DATA);
-          usort($entries, function($a, $b) {
-            return strtotime($a["date"]) - strtotime($b["date"]);
-          });
           
           $calendarHTML = fhtml("<div class=\"row justify-content-center %s\">".NL,
             "text-left");
