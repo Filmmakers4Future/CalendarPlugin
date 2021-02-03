@@ -43,7 +43,7 @@
       print(fhtml("var dates = document.getElementsByClassName(\"date\");").NL);
       print(fhtml("for (date of dates) {
                      time = new Date(date.dataset.time);
-                    date.innerHTML = time.toLocaleString(navigator.userLanguage || navigator.language, {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', weekday: 'short'});;
+                    date.innerHTML = time.toLocaleString(navigator.userLanguage || navigator.language, {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', weekday: 'long'});;
                  }".NL));
       print(fhtml("</script>").NL);
       
