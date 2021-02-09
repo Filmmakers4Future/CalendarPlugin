@@ -78,22 +78,22 @@
               }
               
               $calendarHTML .= fhtml("<div class=\"col-xxxl-3 col-xxl-4 col-xl-5 col-lg-9 col-md-10 col-sm-10 col-10 mx-5 mb-3 calendarItem\">".NL);
+              $calendarHTML .= fhtml("<div class=\"row justify-content-center align-items-center\">".NL);
               
               $calendarHTML .= fhtml("
-                <div class=\"image\">
-                  <img src=\"%s\">
+                <div class=\"col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 mb-3 image\">
+                  <img src=\"%s\" class=\"img-fluid\">
                 </div>".NL, $entry["image"]);
               
               $calendarHTML .= fhtml("
-                <div class=\"summary\">
+                <div class=\"col-xl-9 col-lg-9 col-md-9 col-sm-9 col-12 summary\">
                   <a href=\"%s\"><h4 class=\"text-white header\">%s</h4></a>
                   <p class=\"text-white date\" data-time=\"%s\">%s <small>UTC +1</small></p>
                   <p class=\"text-white text\">%s</p>".NL, $entry["link"], $entry["title"], $date->format('c'), date_format($date,"jS F Y H:i"), $entry["summary"]);
-              
               $calendarHTML .= $tags;
-              
               $calendarHTML .= fhtml("</div>".NL);
               
+              $calendarHTML .= fhtml("</div>".NL);
               $calendarHTML .= fhtml("</div>".NL);
             }
           }
